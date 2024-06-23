@@ -6,5 +6,7 @@ datasets
 faiss-cpu
 langchain-community
 pypdf
-pip install PyPDF2
-logging
+PyPDF2
+langchain_huggingface
+chromadb
+streamlit

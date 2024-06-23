@@ -30,6 +30,9 @@ def create_embeddings(device = 'cpu', modelPath ="sentence-transformers/all-Mini
     print("-"*20, "Embeddings Created ...", "-"*20)
     return embeddings
 
+
+
+
 @log_function_call
 def create_vector_store(docs, embeddings):
     db = FAISS.from_documents(docs, embeddings)
@@ -60,7 +63,7 @@ def create_model(model_name = "google/flan-t5-base", model_temp = 0.1):
         pipeline=question_answerer,
         model_kwargs={"temperature": model_temp, "max_length": 512}
     )
-    print("-"*20, "Model Loaded Created ...", "-"*20)
+    print("-"*20, "Model Loaded  ...", "-"*20)
     return llm
 
 

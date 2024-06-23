@@ -7,5 +7,8 @@ WORKDIR /usr/src/app
 # Copy the current directory contents into the container at /usr/src/app
 COPY . .
 
-# Run script1.py when the container launches
+RUN pip install -r requirements.txt
+
+
+# Run main.py when the container launches
 CMD ["python", "./main.py"]
