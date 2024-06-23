@@ -1,0 +1,10 @@
+langchain
+torch
+transformers
+sentence-transformers
+datasets
+faiss-cpu
+langchain-community
+pypdf
+pip install PyPDF2
+logging
