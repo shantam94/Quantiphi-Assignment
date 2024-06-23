@@ -2,7 +2,7 @@
 
 This repository contains a Dockerized environment for running a Python script. The Docker container is set up to execute the script `run_app.py` located in the repository root.
 
-![Alt text]("app_image.png" "App Screenshot")
+![Alt text](app_image.png "App Screenshot")
 
 
 ## Prerequisites
