@@ -1,7 +1,6 @@
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from .logging_decorator import log_function_call
-from PyPDF2 import PdfReader
 import chromadb
 import os
 from langchain_community.vectorstores import Chroma
@@ -32,8 +31,31 @@ def split_data(data):
     return docs
 
 @log_function_call
-def load_chunk_persist_pdf(modelPath = "sentence-transformers/all-MiniLM-L6-v2", model_kwargs = {'device':'cpu'},\
-    encode_kwargs = {'normalize_embeddings': False}) -> Chroma:
+def load_chunk_persist_pdf(modelPath = "sentence-transformers/all-MiniLM-L6-v2",
+                           model_kwargs = {'device':'cpu'},
+                           encode_kwargs = {'normalize_embeddings': False}) -> Chroma:
+    
+    """
+    Loads PDF documents from a specified folder, chunks them into smaller segments,
+    and persists them in a Chroma vector database.
+
+    Args:
+    - modelPath (str, optional): Path to the pre-trained model to use for embeddings, defaults to
+      "sentence-transformers/all-MiniLM-L6-v2".
+    - model_kwargs (dict, optional): Dictionary of model configuration options, defaults to {'device': 'cpu'}.
+    - encode_kwargs (dict, optional): Dictionary of encoding options, defaults to {'normalize_embeddings': False}.
+
+    Returns:
+    - vectordb: A Chroma vector database instance containing embeddings of the chunked documents.
+
+    Note:
+    - This function loads PDF documents from the 'data' folder, chunks them using a specified chunk size and overlap,
+      and stores the chunked documents in a Chroma vector database.
+    - It initializes embeddings using the HuggingFaceEmbeddings class and persists the vector database to disk.
+
+
+    """
+    
     pdf_folder_path = "data"
     documents = []
     for file in os.listdir(pdf_folder_path):
@@ -52,10 +74,10 @@ def load_chunk_persist_pdf(modelPath = "sentence-transformers/all-MiniLM-L6-v2",
     vectordb = Chroma.from_documents(
         documents=chunked_documents,
         embedding=HuggingFaceEmbeddings(
-    model_name=modelPath,     # Provide the pre-trained model's path
-    model_kwargs=model_kwargs, # Pass the model configuration options
-    encode_kwargs=encode_kwargs # Pass the encoding options
-),
+                                        model_name=modelPath,     # Provide the pre-trained model's path
+                                        model_kwargs=model_kwargs, # Pass the model configuration options
+                                        encode_kwargs=encode_kwargs # Pass the encoding options
+                                        ),
         persist_directory="chroma_store"
     )
     vectordb.persist()

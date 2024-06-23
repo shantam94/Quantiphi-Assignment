@@ -68,7 +68,7 @@ def main():
 
     # Streamlit UI
     # ===============
-    st.set_page_config(page_title="Anwer your Question in Biology!", page_icon=":robot:")
+    st.set_page_config(page_title="Answer your Question in Biology!", page_icon=":robot:")
     
     qa = model_main()
     
