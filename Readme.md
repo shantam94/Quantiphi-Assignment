@@ -29,8 +29,9 @@ Run the Docker container to execute the Python script `run_app.py`:
 
 
 ```bash
-docker run python-script-container --db f
-
+docker run python-script-container -p 8051:8051
+Go To : http://localhost:8501/ 
+for the app
 ```
 here --db argument is for the selection of memory for vector database, f -> FAISS, else ChromaDB
 
