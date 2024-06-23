@@ -13,7 +13,7 @@ This repository contains a Dockerized environment for running a Python script. T
 Clone this repository to your local machine using Git:
 
 ```bash
-git clone https://github.com/yourusername/your-repository.git
+git clone https://github.com/shantam94/Quantiphi-Assignment.git
 cd your-repository
 ```
 
