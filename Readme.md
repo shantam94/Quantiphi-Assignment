@@ -21,6 +21,7 @@ cd your-repository
 
 Please paste the pdf file from https://openstax.org/details/books/concepts-biology and place it in the "data" folder
 ```
+Please paste the pdf file from https://openstax.org/details/books/concepts-biology and place it in the "data" folder
 
 ### 2. Build the Docker Image
 Build the Docker image using the provided Dockerfile:
