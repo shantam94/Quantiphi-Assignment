@@ -18,6 +18,8 @@ Clone this repository to your local machine using Git:
 ```bash
 git clone https://github.com/shantam94/Quantiphi-Assignment.git
 cd your-repository
+
+Please paste the pdf file from https://openstax.org/details/books/concepts-biology and place it in teh "data" folder
 ```
 
 ### 2. Build the Docker Image

@@ -303,3 +303,17 @@
 2024-06-23 22:43:22,795 - utils.model - INFO - Exiting create_vector_store
 2024-06-23 22:43:22,795 - utils.model - INFO - Entering create_model
 2024-06-23 22:43:27,012 - utils.model - INFO - Exiting create_model
+2024-06-24 02:49:38,580 - utils.data_read - INFO - Entering load_pdf_document
+2024-06-24 02:49:50,445 - utils.data_read - INFO - Exiting load_pdf_document
+2024-06-24 02:49:50,446 - utils.data_read - INFO - Entering split_data
+2024-06-24 02:49:50,448 - utils.data_read - INFO - Exiting split_data
+2024-06-24 02:49:50,448 - utils.model - INFO - Entering create_embeddings
+2024-06-24 02:49:53,176 - datasets - INFO - PyTorch version 2.3.1 available.
+2024-06-24 02:49:54,296 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2024-06-24 02:51:19,199 - utils.model - INFO - Exiting create_embeddings
+2024-06-24 02:51:19,199 - utils.model - INFO - Entering create_vector_store
+2024-06-24 02:51:25,608 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2024-06-24 02:51:25,929 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2024-06-24 02:51:25,948 - utils.model - INFO - Exiting create_vector_store
+2024-06-24 02:51:25,948 - utils.model - INFO - Entering create_model
+2024-06-24 02:51:30,718 - utils.model - INFO - Exiting create_model
